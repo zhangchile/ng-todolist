@@ -29,6 +29,6 @@
     "bootstrap": "3.3.x",
     "jquery": "2.2.x",
     "seajs": "3.x",
-    "angular-material": "1.x",
+    "angular-material": "1.x"
   }
 }
