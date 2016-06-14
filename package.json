@@ -1,0 +1,34 @@
+{
+  "name": "ng-todolist",
+  "version": "1.0.0",
+  "description": "angular to do list",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhangchile/ng-todolist.git"
+  },
+  "keywords": [
+    "angular",
+    "todolist"
+  ],
+  "author": "chile.zhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhangchile/ng-todolist/issues"
+  },
+  "homepage": "https://github.com/zhangchile/ng-todolist",
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-animate": "1.5.x",
+    "angular-mocks": "1.5.x",
+    "angular-resource": "1.5.x",
+    "angular-route": "1.5.x",
+    "bootstrap": "3.3.x",
+    "jquery": "2.2.x",
+    "seajs": "3.x",
+    "angular-material": "1.x",
+  }
+}

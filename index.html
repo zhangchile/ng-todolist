@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>Angular To Do List</title>
+	<script type="text/javascript" src="node_modules/seajs/dist/sea.js"></script>
+	<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+seajs.config({
+  base: "./node_modules/",
+  alias: {
+    "jquery": "jquery/dist/jquery.js",
+    "angular": "angular/angular.js",
+    "angular-route": "angular-route/angular-route.js",
+    "angular-resource": "angular-resource/angular-resource.js"
+  }
+})
+
+// 加载入口模块
+var dependency = [
+	"angular",
+	"angular-route",
+	"angular-resource",
+];
+
+</script>
+</html>
