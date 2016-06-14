@@ -8,7 +8,26 @@
 	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
-
+<header></header>
+<div id="content">
+	<div>
+		<p>+添加</p>	
+	</div>
+	<div>
+		<p>代办</p>
+		<ul>
+		<li>吃饭</li>
+		<li>睡觉</li>
+		</ul>
+	</div>
+	<div>
+		<p>已完成</p>
+		<ul>
+		<li>聊天</li>
+		</ul>
+	</div>
+</div>
+<footer></footer>
 </body>
 <script type="text/javascript">
 seajs.config({
@@ -17,9 +36,10 @@ seajs.config({
     "jquery": "jquery/dist/jquery.js",
     "angular": "angular/angular.js",
     "angular-route": "angular-route/angular-route.js",
-    "angular-resource": "angular-resource/angular-resource.js"
+    "angular-resource": "angular-resource/angular-resource.js",
+    "angular-material": "angular-material/angular-material.js"
   }
-})
+});
 
 // 加载入口模块
 var dependency = [
