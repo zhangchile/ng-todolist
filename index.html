@@ -25,38 +25,56 @@
 				<a href="javascript:void(0)" class="list-group-item"> <span class="badge">14</span>全部</a>
 				<a href="javascript:void(0)" class="list-group-item"> <span class="badge">1</span>已完成</a>
 			</div>
-			<div class="division">----</div>
+			<div class="divide"></div>
 			标签
-			<div class="list-group">
-				<a href="javascript:void(0)" class="list-group-item">重要</a>
-				<a href="javascript:void(0)" class="list-group-item">周末</a>
-				<a href="javascript:void(0)" class="list-group-item">紧急</a>
+			<div class="list-group side-nav-list">
+				<a href="javascript:void(0)" class="list-group-item">
+					<span class="label label-default">&nbsp;</span>重要</a>
+				<a href="javascript:void(0)" class="list-group-item">
+					<span class="label label-info">&nbsp;</span>周末</a>
+				<a href="javascript:void(0)" class="list-group-item">
+					<span class="label label-warning">&nbsp;</span>紧急</a>
 			</div>
 		</div>
 		<div class="content col-md-9">
 			<div class="row">
 				<div class="col-md-12">
-					<div>
-						<p>+添加</p>
-					</div>
-					<div>
-						<p>代办</p>
-						<ul>
+
+					<form class="form-horizontal">
+					  <div class="form-group">
+					    <div class="col-md-10">
+					      <input type="text" class="form-control" placeholder="添加待办...">
+					    </div>
+					    <button type="submit" class="col-md-1 btn btn-info">添加</button>
+					  </div>
+					</form>
+
+					<div class="panel panel-default">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">待办</h3>
+					  </div>
+					  <div class="panel-body">
+						<ul class="list-item">
 						<li>吃饭</li>
 						<li>睡觉</li>
 						</ul>
+					  </div>
 					</div>
-					<div>
-						<p>已完成</p>
-						<ul>
+
+					<div class="panel panel-default">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">已完成</h3>
+					  </div>
+					  <div class="panel-body">
+						<ul class="list-item">
 						<li>聊天</li>
 						</ul>
+					  </div>
+					  
 					</div>
 				</div>
-
 			</div>
 		</div>
-
 	</div>
 
 
