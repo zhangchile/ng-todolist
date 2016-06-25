@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html>
 <head>
 	<meta charset="utf-8">
 	<title>Angular To Do List</title>
@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/less" href="public/css/main.less">
 </head>
-<body>
+<body ng-controller="indexCtrl">
 <header class="container-fuild nav">
 	<div class="container">
 		<div class="row ">
@@ -95,22 +95,39 @@
 </body>
 <script type="text/javascript">
 seajs.config({
-  base: "./node_modules/",
+  base: "./",
   alias: {
-    "jquery": "jquery/dist/jquery.js",
-    "angular": "angular/angular.js",
-    "angular-route": "angular-route/angular-route.js",
-    "angular-resource": "angular-resource/angular-resource.js",
-    "angular-material": "angular-material/angular-material.js"
+    "jquery": "node_modules/jquery/dist/jquery.js",
+    "angular": "node_modules/angular/angular.js",
+    "angular-route": "node_modules/angular-route/angular-route.js",
+    "angular-resource": "node_modules/angular-resource/angular-resource.js",
+    "angular-material": "node_modules/angular-material/angular-material.js"
   }
 });
 
 // 加载入口模块
 var dependency = [
 	"angular",
-	"angular-route",
-	"angular-resource",
+	// "angular-route",
+	// "angular-resource",
+	"public/js/main.module",
+	"public/js/undo-list/undo-list.module",
 ];
+seajs.use(dependency, function() {
+	var module = [
+		"main",
+		"undoList",
+	];
+	// console.log(angular)
+	var app = angular.module("index", module);
+	app.controller("indexCtrl",["loadList", function (loadList) {
+		loadList.show().success(function (data) {
+			console.log(data)
+		});
+	}]);
+
+	angular.bootstrap(document.body, ["index"]);
+});
 
 </script>
 
