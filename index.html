@@ -119,9 +119,12 @@ seajs.use(dependency, function() {
 			$scope.undoList.push(data);
 		}
 
-		loadList.show().success(function (data) {
+		loadList.show().then(function (data) {
 			console.log(data)
 			$scope.undoList = data;
+			return data;
+		}).then(function (d) {
+			console.log(d.length)
 		});
 	}]);
 

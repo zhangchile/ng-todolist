@@ -4,10 +4,17 @@ define(function(require, exports, module) {
 	app.config(function ($httpProvider) {
 		
 	});
-	app.factory("loadList", ["$http", function ($http) {
+	app.factory("loadList", ["$http", "$q", function ($http, $q) {
 		return {
 			show : function () {
-				return $http.get("public/data/undo-list/list.json");
+				var defer = $q.defer();
+				var promise = defer.promise;
+				$http.get("public/data/undo-list/list.json").success(function (data) {
+					defer.resolve(data);
+				}).error(function (data) {
+					defer.reject(data);
+				});
+				return promise;
 			}
 		}
 	}]);
