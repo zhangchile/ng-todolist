@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+var user = require('../model/user');
+
 // router.use(function timeLog(req, res, next) {
 //   console.log('Time:' , Date.now());
 // });
@@ -12,6 +14,8 @@ var nextObj = function (req, res) {
 
 router.get('/', function (req, res, next) {
   //res.json('Birds home Page');
+  console.log('user=')
+  console.log(user);
   next();
 }, nextObj);
 
