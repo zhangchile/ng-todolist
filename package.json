@@ -23,12 +23,13 @@
   "dependencies": {
     "angular": "1.5.x",
     "angular-animate": "1.5.x",
+    "angular-material": "1.x",
     "angular-mocks": "1.5.x",
     "angular-resource": "1.5.x",
     "angular-route": "1.5.x",
     "bootstrap": "3.3.x",
+    "express": "^4.14.0",
     "jquery": "2.2.x",
-    "seajs": "3.x",
-    "angular-material": "1.x"
+    "seajs": "3.x"
   }
 }

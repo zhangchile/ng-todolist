@@ -3,10 +3,14 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
+var birds = require('./routes/bird');
+var mongo = require('./routes/mongodb');
 
 var app = express();
 
@@ -20,10 +24,21 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session(
+  {
+      secret: 'zhangzhili',
+      name: 'todolist',   //这里的name值得是cookie的name，默认cookie的name是：connect.sid
+      cookie: {maxAge:  2*3600*1000},  //例如设置maxAge是80000ms，即80s后session和相应的cookie失效过期
+      resave: false,
+      saveUninitialized: true
+  }
+    ));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/birds', birds);
+app.use('/mongodb', mongo);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
