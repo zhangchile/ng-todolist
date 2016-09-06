@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var path = require('path');
 
 router.use(function timeLog(req, res, next) {
   console.log('Time: ', Date.now());
@@ -20,7 +21,8 @@ router.get('/', function(req, res, next) {
   //   res.end('welcome to the session demo. refresh!')
   // }
   // // res.render('index', { title: 'Express' });
-  res.sendFile('index.html');
+  console.log(process.cwd());
+  res.sendFile(process.cwd() + "/views/" +'index.html');
 });
 
 module.exports = router;
