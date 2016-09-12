@@ -10,7 +10,7 @@ router.use(function (req, res, next) {
     next();
   } else {
     //跳转
-    res.redirect('/users/login');
+    res.redirect('/login');
   }
 });
 

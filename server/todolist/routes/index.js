@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
+var app = express();
+var viewHelper = require('../lib/viewHelper');
 
 router.use(function timeLog(req, res, next) {
   console.log('Time: ', Date.now());
@@ -20,9 +22,9 @@ router.get('/', function(req, res, next) {
   //   sess.views = 1
   //   res.end('welcome to the session demo. refresh!')
   // }
-  // // res.render('index', { title: 'Express' });
-  console.log(process.cwd());
-  res.sendFile(process.cwd() + "/views/" +'index.html');
+  res.render('index', { title: 'Express' });
+  // console.log(app.get('views'));
+  // res.sendFile(viewHelper.getViewDir('index.html'));
 });
 
 module.exports = router;
