@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
   //   sess.views = 1
   //   res.end('welcome to the session demo. refresh!')
   // }
-  res.render('index', { title: 'Express' });
+  res.render('index');
   // console.log(app.get('views'));
   // res.sendFile(viewHelper.getViewDir('index.html'));
 });

@@ -14,9 +14,20 @@ html(lang="en")
 
     block stylesheet
     block headscript
+  body
+    header.container-fuild.nav
+      div.container
+        div.row
+          div.col-md-12
+            = "ToDoList"
 
-  block content
-
+    div.container.main
+      block content
+    footer.footer.container-fuild
+      div.container
+        div.row
+          div.col-md-12
+            != "@chile.zhang"
   script
     != "less = { env: 'development'};"
   script(src="/node_modules/less/dist/less.js")
