@@ -1,5 +1,11 @@
-include ./layout/head.html
+extends ./layout/normal.jade
 
-include ./body.html
+block title
+  title 首页
 
-include  ./layout/foot.html
+block content
+  body
+    include ./body.html
+
+block footer
+  // load js into footer block

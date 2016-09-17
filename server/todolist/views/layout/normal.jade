@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+  head
+    meta(chartset="utf-8")
+    - var title = "Angular To Do List"
+    block title
+      title= title
+    script(type="text/javascript", src="/node_modules/seajs/dist/sea.js")
+    script(type="text/javascript", src="/js/seajs.config.js")
+    script(type="text/javascript", src="/node_modules/jquery/dist/jquery.js")
+    script(type="text/javascript", src="/node_modules/bootstrap/dist/js/bootstrap.js")
+    link(rel="stylesheet", type="text/css", href="/node_modules/bootstrap/dist/css/bootstrap.css")
+    link(rel="stylesheet", type="text/less", href="/css/main.less")
+
+    block stylesheet
+    block headscript
+
+  block content
+
+  script
+    != "less = { env: 'development'};"
+  script(src="/node_modules/less/dist/less.js")
+  script
+    != "less.watch();"
+
+  block footer
