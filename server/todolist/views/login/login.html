@@ -1,17 +1,22 @@
 <script type="text/javascript">
   var dependency = [
-    "angular"
+    "angular",
+    "js/app/login/services"
   ];
   seajs.use(dependency, function () {
-    var app = angular.module("login", []);
-    app.controller("loginCtrl", ["$scope", function ($scope) {
+    var app = angular.module("Login", ["app.login.services"]);
+    app.controller("loginCtrl", ["$scope", "Login",function ($scope, Login) {
       $scope.username = '';
       $scope.password = '';
       $scope.ok = function () {
-        
+        Login.in($scope.username, $scope.password).success(function (data) {
+          console.log(data);
+        }).error(function (data) {
+          console.log(data);
+        });
       }
     }]);
-
+    angular.bootstrap(document.body, ['Login']);
   });
 </script>
 
@@ -27,13 +32,13 @@
         <div class="form-group">
           <label class="control-label col-md-2" for="password">密码</label>
           <div class="col-md-4">
-            <input class="form-control" type="text" name="password" value="" required ng-model="password">
+            <input class="form-control" type="password" name="password" value="" required ng-model="password">
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-md-2" for=""></label>
           <div class="col-md-6">
-            <button class="btn btn-default" type="button" ng-disabled="loginForm.$dirty && loginForm.$invaild">登录</button>
+            <button class="btn btn-default" type="button" ng-click="ok()" ng-disabled="loginForm.$invalid">登录</button>
           </div>
         </div>
       </form>

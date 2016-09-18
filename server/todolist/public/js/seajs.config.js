@@ -1,5 +1,5 @@
 seajs.config({
-  base: "./",
+  base: "/",
   alias: {
     "jquery": "/node_modules/jquery/dist/jquery.js",
     "angular": "/node_modules/angular/angular.js",
